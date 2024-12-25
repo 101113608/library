@@ -23,3 +23,9 @@ Book.prototype = {
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.bookRead()}`
     }
 }
+
+function addBookToLibrary(title, author, pages, hasRead) {
+    let book = new Book(title, author, pages, hasRead);
+    myLibrary.push(book);
+    return book;
+}
