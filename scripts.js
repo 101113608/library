@@ -78,3 +78,9 @@ function addBookToLibrary(title, author, pages, hasRead) {
     myLibrary.push(book);
     return book;
 }
+
+function createCard(book, index) {
+    let card = new CardElement(book, index);
+    libraryDiv.append(card.containerDiv);
+    cardElementArr.push(card);
+}
