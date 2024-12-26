@@ -13,6 +13,11 @@
     src: url(fonts/morningbreeze-regular-webfont.woff2);
 }
 
+:root {
+    --default-font: "roboto-regular", Arial, Helvetica Neue, Helvetica, sans-serif;
+    --heading-font: "morning-breeze", var(--default-font);
+}
+
 *,
 *::before,
 *::after {
