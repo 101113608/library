@@ -1,4 +1,8 @@
 const myLibrary = []
+
+const libraryDiv = document.querySelector(".library");
+const cardElementArr = [];
+
 function Book(title, author, pages, hasRead) {
     this.title = title,
         this.author = author,
