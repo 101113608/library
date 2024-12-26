@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "roboto-regular";
+    src: url(fonts/roboto-regular-webfont.woff2);
+}
+
+@font-face {
+    font-family: "roboto-medium";
+    src: url(fonts/roboto-medium-webfont.woff2);
+}
+
+@font-face {
+    font-family: "morning-breeze";
+    src: url(fonts/morningbreeze-regular-webfont.woff2);
+}
+
 *,
 *::before,
 *::after {
