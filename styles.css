@@ -16,6 +16,13 @@
 :root {
     --default-font: "roboto-regular", Arial, Helvetica Neue, Helvetica, sans-serif;
     --heading-font: "morning-breeze", var(--default-font);
+
+    --maya-blue-clr: #86B6F6;
+    --alice-blue-clr: #EBF5FF;
+    --pale-cornflower-blue-clr: #B4D4FF;
+    --sunset-orange-clr: #EB4C4C;
+    --viking-blue-clr: #43B8CA;
+    --white-clr: #ffffff;
 }
 
 *,
