@@ -84,3 +84,11 @@ function createCard(book, index) {
     libraryDiv.append(card.containerDiv);
     cardElementArr.push(card);
 }
+
+function displayLibrary() {
+    myLibrary.forEach((book, index) => {
+        if (Object.getPrototypeOf(book) === Book.prototype) {
+            createCard(book, index);
+        }
+    })
+}
