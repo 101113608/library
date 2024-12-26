@@ -18,6 +18,42 @@
     </header>
     <div class="library">
     </div>
+    <dialog>
+        <form action="/" method="dialog" id="bookForm">
+            <h2 class="form-title">Add a Book</h2>
+            <fieldset>
+                <div class="form-input-section">
+                    <label for="bookTitle">Title</label>
+                    <input type="text" name="bookTitle" id="bookTitle" required>
+                </div>
+                <div class="form-input-section">
+                    <label for="bookAuthor">Author</label>
+                    <input type="text" name="bookAuthor" id="bookAuthor" required>
+                </div>
+                <div class="form-input-section">
+                    <label for="bookPages">Pages</label>
+                    <input type="number" name="bookPages" id="bookPages" min="1" max="2000" value="1">
+                </div>
+                <div class="form-input-section">
+                    <p class="radio-title">Have you read the book?</p>
+                    <ul class="radio-container">
+                        <li class="radio-input-section">
+                            <label for="hasRead">Yes</label>
+                            <input type="radio" id="hasRead" name="bookRead" value="true">
+                        </li>
+                        <li class="radio-input-section">
+                            <label for="hasNotRead">No</label>
+                            <input type="radio" id="hasNotRead" name="bookRead" value="false" checked>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+            <div class="form-buttons">
+                <button type="submit" class="btn submit-book white-text">Add book</button>
+                <button type="reset" class="btn modal-close white-text">Cancel</button>
+            </div>
+        </form>
+    </dialog>
     <script src="scripts.js"></script>
 </body>
 
