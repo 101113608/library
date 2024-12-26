@@ -92,3 +92,13 @@ function displayLibrary() {
         }
     })
 }
+
+window.addEventListener("load", () => {
+    // Dummy data
+    addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", false);
+    addBookToLibrary("The Courage To Be Disliked", "Ichiro Kishimi, Fumitake Koga", "288", true);
+    addBookToLibrary("The Subtle Art of Not Giving a F*ck", "Mark Manson", "224", false);
+    addBookToLibrary("There are Rivers in the Sky", "Elif Shafak", "464", false);
+
+    displayLibrary();
+});
