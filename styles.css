@@ -37,6 +37,11 @@
     font-family: var(--default-font);
 }
 
+ul {
+    list-style: none;
+}
+
+
 body {
     min-height: 100svh;
     background-color: var(--maya-blue-clr);
@@ -146,4 +151,100 @@ header,
 .card {
     filter: drop-shadow(1px 5px 3px #5f5f5f1c);
     -webkit-filter: drop-shadow(1px 5px 3px #5f5f5f1c);
+}
+
+/* Styling for dialog and form ('Add a book' form) */
+dialog {
+    inset: 0;
+    margin: auto;
+    width: 25rem;
+    padding: 25px;
+    background-color: var(--alice-blue-clr);
+
+    border-style: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+
+    filter: drop-shadow(1px 1px 10px #5f5f5f1c);
+    -webkit-filter: drop-shadow(1px 1px 10px #5f5f5f1c);
+}
+
+dialog::backdrop {
+    background-color: #b4b4b44d;
+    backdrop-filter: blur(5px);
+}
+
+form {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 1rem;
+}
+
+header h1,
+form h2 {
+    font-family: var(--heading-font);
+}
+
+form h2 {
+    display: flex;
+    justify-content: center;
+
+    font-size: 2.5rem;
+}
+
+form button,
+form p,
+form label{
+    font-family: "roboto-medium", var(--default-font);
+}
+
+form>*, fieldset>div {
+    grid-column: span 2;
+}
+
+fieldset {
+    display: contents;
+}
+
+fieldset>div:nth-of-type(n) {
+    display: grid;
+    align-items: center;
+    grid-template-columns: subgrid;
+}
+
+fieldset>div:nth-last-of-type(1) {
+    margin: 1rem 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+fieldset>div:nth-last-of-type(1)>ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: var(--maya-blue-clr);
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 0.25rem;
+    border: 1px solid var(--white-clr);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
