@@ -66,14 +66,42 @@ function CardElement(book, index) {
         return bookStatus;
     }
 
+    function createBookButtonsDiv() {
+        function createDeleteButton() {
+            let deleteElement = {
+                button: document.createElement("button"),
+                icon: document.createElement("img"),
+            }
+
+            deleteElement.icon.setAttribute("src", "icons/delete_24dp.svg");
+            deleteElement.icon.setAttribute("alt", "Delete Book");
+
+            deleteElement.button.append(deleteElement.icon, "Delete");
+            deleteElement.button.setAttribute("class", "btn delete-book white-text");
+
+            return deleteElement;
+        }
+
+        let bookButtons = {
+            containerDiv: document.createElement("div"),
+            deleteElement: createDeleteButton(),
+        }
+
+        bookButtons.containerDiv.setAttribute("class", "book-buttons");
+        bookButtons.containerDiv.append(bookButtons.deleteElement.button);
+
+        return bookButtons;
+    }
+
     this.containerDiv = document.createElement("div");
     this.bookData = createBookDataDiv();
     this.bookStatus = createBookStatusP();
+    this.bookButtons = createBookButtonsDiv();
 
     this.containerDiv.setAttribute("class", "card")
     this.containerDiv.setAttribute("data-index", index); // Object to DOM Node connection
 
-    this.containerDiv.append(this.bookData.containerDiv, this.bookStatus.containerP);
+    this.containerDiv.append(this.bookData.containerDiv, this.bookStatus.containerP, this.bookButtons.containerDiv);
 }
 
 function addBookToLibrary(title, author, pages, hasRead) {
