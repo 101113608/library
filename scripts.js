@@ -4,6 +4,7 @@ const libraryDiv = document.querySelector(".library");
 const cardElementArr = [];
 
 const modalElement = document.querySelector("dialog");
+const formElement = document.querySelector("form");
 
 function Book(title, author, pages, hasRead) {
     this.title = title,
