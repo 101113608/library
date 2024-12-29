@@ -153,6 +153,27 @@ header,
     -webkit-filter: drop-shadow(1px 5px 3px #5f5f5f1c);
 }
 
+.book-buttons {
+    background-color: var(--pale-cornflower-blue-clr);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.btn.delete-book {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    padding-right: 1rem;
+    background-color: var(--sunset-orange-clr);
+}
+
 /* Styling for dialog and form ('Add a book' form) */
 dialog {
     inset: 0;
