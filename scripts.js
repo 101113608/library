@@ -131,3 +131,10 @@ window.addEventListener("click", (e) => {
         modalElement.close();
     }
 });
+
+window.addEventListener("submit", (e) => {
+    e.preventDefault();
+    createCard(processNewBook(), myLibrary.length - 1);
+    formElement.reset();
+    modalElement.close();
+});
