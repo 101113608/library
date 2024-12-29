@@ -96,6 +96,22 @@ function displayLibrary() {
     })
 }
 
+function extractFormData() {
+    let bookValues = [];
+    let formData = new FormData(formElement);
+
+    formData.forEach(value => {
+        bookValues.push(value);
+    });
+
+    return bookValues;
+}
+
+function processNewBook() {
+    let bookValues = extractFormData();
+    return addBookToLibrary(bookValues[0], bookValues[1], bookValues[2], bookValues[3] === "true");
+}
+
 window.addEventListener("load", () => {
     // Dummy data
     addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", false);
