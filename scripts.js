@@ -3,6 +3,8 @@ const myLibrary = []
 const libraryDiv = document.querySelector(".library");
 const cardElementArr = [];
 
+const modalElement = document.querySelector("dialog");
+
 function Book(title, author, pages, hasRead) {
     this.title = title,
         this.author = author,
@@ -101,4 +103,14 @@ window.addEventListener("load", () => {
     addBookToLibrary("There are Rivers in the Sky", "Elif Shafak", "464", false);
 
     displayLibrary();
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target.classList.value.includes("modal-open")) {
+        modalElement.showModal();
+    }
+
+    if (e.target.classList.value.includes("modal-close")) {
+        modalElement.close();
+    }
 });
