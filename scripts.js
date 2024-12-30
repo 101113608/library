@@ -160,6 +160,14 @@ function removeCard(index) {
     cardElementArr.splice(index, 1);
 }
 
+function reindexCardElementArr(index) {
+    if (cardElementArr.length > 0) {
+        for (let i = index; i < cardElementArr.length; i++) {
+            cardElementArr[i].containerDiv.setAttribute("data-index", `${i}`);
+        }
+    }
+}
+
 window.addEventListener("load", () => {
     // Dummy data
     addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", false);
@@ -183,6 +191,7 @@ window.addEventListener("click", (e) => {
         let index = +(e.target.closest(".card").getAttribute("data-index"));
         removeBook(index);
         removeCard(index);
+        reindexCardElementArr(index);
     }
 
 });
