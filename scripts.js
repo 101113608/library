@@ -210,6 +210,10 @@ window.addEventListener("click", (e) => {
         reindexCardElementArr(index);
     }
 
+    if (e.target.classList.value.includes("update-status")) {
+        let index = +(e.target.closest(".card").getAttribute("data-index"));
+    }
+
 });
 
 window.addEventListener("submit", (e) => {
