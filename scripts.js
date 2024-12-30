@@ -67,6 +67,21 @@ function CardElement(book, index) {
     }
 
     function createBookButtonsDiv() {
+        function createUpdateButton() {
+            let updateElement = {
+                button: document.createElement("button"),
+                icon: document.createElement("img"),
+            }
+
+            updateElement.icon.setAttribute("src", "icons/change_circle_24dp.svg");
+            updateElement.icon.setAttribute("alt", "Update Status");
+
+            updateElement.button.append(updateElement.icon, "Status");
+            updateElement.button.setAttribute("class", "btn update-status white-text");
+
+            return updateElement;
+        }
+
         function createDeleteButton() {
             let deleteElement = {
                 button: document.createElement("button"),
@@ -84,11 +99,12 @@ function CardElement(book, index) {
 
         let bookButtons = {
             containerDiv: document.createElement("div"),
+            updateElement: createUpdateButton(),
             deleteElement: createDeleteButton(),
         }
 
         bookButtons.containerDiv.setAttribute("class", "book-buttons");
-        bookButtons.containerDiv.append(bookButtons.deleteElement.button);
+        bookButtons.containerDiv.append(bookButtons.updateElement.button, bookButtons.deleteElement.button);
 
         return bookButtons;
     }
