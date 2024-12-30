@@ -144,6 +144,22 @@ function removeBook(index) {
     myLibrary.splice(index, 1);
 }
 
+function deleteObjectKeys(object) {
+    Object.keys(object).forEach((key) => {
+        // If value of key is an object
+        if (object[key] === Object(object[key])) {
+            deleteObjectKeys(object[key]);
+        }
+        delete object[key];
+    })
+}
+
+function removeCard(index) {
+    libraryDiv.removeChild(cardElementArr[index].containerDiv);
+    deleteObjectKeys(cardElementArr[index]);
+    cardElementArr.splice(index, 1);
+}
+
 window.addEventListener("load", () => {
     // Dummy data
     addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", false);
@@ -166,6 +182,7 @@ window.addEventListener("click", (e) => {
     if (e.target.classList.value.includes("delete-book")) {
         let index = +(e.target.closest(".card").getAttribute("data-index"));
         removeBook(index);
+        removeCard(index);
     }
 
 });
