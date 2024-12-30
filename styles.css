@@ -25,6 +25,18 @@
     --white-clr: #ffffff;
 }
 
+.red-text {
+    color: var(--sunset-orange-clr);
+}
+
+.blue-text {
+    color:var(--viking-blue-clr);
+}
+
+.white-text {
+    color: var(--white-clr);
+}
+
 *,
 *::before,
 *::after {
