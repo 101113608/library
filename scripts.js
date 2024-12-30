@@ -184,6 +184,13 @@ function reindexCardElementArr(index) {
     }
 }
 
+function updateStatus(index) {
+    myLibrary[index].toggleReadStatus();
+    cardElementArr[index].bookStatus.containerSpan.textContent = myLibrary[index].getReadStatus();
+    cardElementArr[index].bookStatus.containerSpan.setAttribute("class", `${myLibrary[index].hasRead ? "blue-text" : "red-text"}`);
+}
+
+
 window.addEventListener("load", () => {
     // Dummy data
     addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", false);
@@ -212,6 +219,7 @@ window.addEventListener("click", (e) => {
 
     if (e.target.classList.value.includes("update-status")) {
         let index = +(e.target.closest(".card").getAttribute("data-index"));
+        updateStatus(index);
     }
 
 });
