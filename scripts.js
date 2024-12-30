@@ -158,6 +158,11 @@ window.addEventListener("click", (e) => {
     if (e.target.classList.value.includes("modal-close")) {
         modalElement.close();
     }
+
+    if (e.target.classList.value.includes("delete-book")) {
+        let index = +(e.target.closest(".card").getAttribute("data-index"));
+    }
+
 });
 
 window.addEventListener("submit", (e) => {
