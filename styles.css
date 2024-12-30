@@ -165,12 +165,20 @@ header,
     border-bottom-right-radius: 25px;
 }
 
+.btn.update-status,
 .btn.delete-book {
     display: flex;
     align-items: center;
     gap: 1rem;
 
     padding-right: 1rem;
+}
+
+.btn.update-status {
+    background-color: var(--viking-blue-clr);
+}
+
+.btn.delete-book {
     background-color: var(--sunset-orange-clr);
 }
 
