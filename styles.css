@@ -49,6 +49,10 @@
     font-family: var(--default-font);
 }
 
+*:focus-visible {
+    outline: 3px solid #adefc5;
+}
+
 ul {
     list-style: none;
 }
