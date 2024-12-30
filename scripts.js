@@ -140,6 +140,10 @@ function processNewBook() {
     return addBookToLibrary(bookValues[0], bookValues[1], bookValues[2], bookValues[3] === "true");
 }
 
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+}
+
 window.addEventListener("load", () => {
     // Dummy data
     addBookToLibrary("The Hobbit", "J.R.R. Tolkien", "295", false);
@@ -161,6 +165,7 @@ window.addEventListener("click", (e) => {
 
     if (e.target.classList.value.includes("delete-book")) {
         let index = +(e.target.closest(".card").getAttribute("data-index"));
+        removeBook(index);
     }
 
 });
