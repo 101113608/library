@@ -31,8 +31,20 @@ class Book {
     }
 }
 
-function CardElement(book, index) {
-    function createBookDataDiv() {
+class CardElement {
+    constructor(book, index) {
+        this.containerDiv = document.createElement("div");
+        this.bookData = this.#createBookDataDiv(book);
+        this.bookStatus = this.#createBookStatusP(book, index);
+        this.bookButtons = this.#createBookButtonsDiv();
+
+        this.containerDiv.setAttribute("class", "card")
+        this.containerDiv.setAttribute("data-index", index); // Object to DOM Node connection
+
+        this.containerDiv.append(this.bookData.containerDiv, this.bookStatus.containerP, this.bookButtons.containerDiv);
+    }
+
+    #createBookDataDiv(book) {
         let bookData = {
             containerDiv: document.createElement("div"),
             bookTitle: document.createElement("h2"),
@@ -50,7 +62,7 @@ function CardElement(book, index) {
         return bookData;
     }
 
-    function createBookStatusP() {
+    #createBookStatusP(book, index) {
         let bookStatus = {
             containerP: document.createElement("p"),
             containerSpan: document.createElement("span"),
@@ -66,7 +78,7 @@ function CardElement(book, index) {
         return bookStatus;
     }
 
-    function createBookButtonsDiv() {
+    #createBookButtonsDiv() {
         function createUpdateButton() {
             let updateElement = {
                 button: document.createElement("button"),
@@ -108,16 +120,6 @@ function CardElement(book, index) {
 
         return bookButtons;
     }
-
-    this.containerDiv = document.createElement("div");
-    this.bookData = createBookDataDiv();
-    this.bookStatus = createBookStatusP();
-    this.bookButtons = createBookButtonsDiv();
-
-    this.containerDiv.setAttribute("class", "card")
-    this.containerDiv.setAttribute("data-index", index); // Object to DOM Node connection
-
-    this.containerDiv.append(this.bookData.containerDiv, this.bookStatus.containerP, this.bookButtons.containerDiv);
 }
 
 function addBookToLibrary(title, author, pages, hasRead) {
